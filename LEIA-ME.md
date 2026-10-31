@@ -31,6 +31,8 @@ O instalador não altera DNS, certificados, firewall ou configurações dos site
 
 ## Uso em aula e estudo
 
+A paleta de anotações do instrutor começa fechada ao abrir o leitor. Use **Abrir paleta** no topo quando precisar das ferramentas e **Fechar paleta** para recolhê-las. No modo aula, aproxime o ponteiro do topo para acessar esse botão. Recolher a paleta volta para **Mover**, preserva as marcações e libera o espaço da ficha. Ao trocar de ficha durante a apresentação, a paleta mantém a escolha de aberta ou fechada; ao voltar ao índice e reabrir o leitor, começa fechada novamente.
+
 No painel **Alunos e acessos**, use **Cadastrar aluno**. A data da prova é também o último dia de acesso. Se preferir outra data de encerramento, informe-a nesse campo. O botão **Gerar** sugere uma senha. Guarde-a antes de salvar e envie as credenciais ao aluno por um canal de sua escolha; o sistema não envia mensagens. Senhas não podem ser recuperadas, apenas substituídas. Para bloquear, desmarque **Acesso liberado** e salve. Para prorrogar, altere a data e salve. O aluno precisará entrar novamente.
 
 No leitor, **Leitura** ajusta a ficha à largura; role para ler até o final. **Ficha inteira** mostra o pôster completo. As setas trocam de ficha. **F** alterna tela cheia; **A** ativa o modo aula; **B** pausa; **Esc** volta ao índice (alguns navegadores primeiro saem da tela cheia). No modo aula, mova o ponteiro para o topo ou rodapé para revelar controles. Compartilhe apenas a janela da apresentação na plataforma de aulas.

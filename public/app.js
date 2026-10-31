@@ -28,7 +28,7 @@ function zoomBy(factor){zoom=Math.min(5,Math.max(.3,zoom*factor));resizePoster()
 function setFit(mode){fitMode=mode;zoom=1;resizePoster();$('viewport').scrollTo(0,0);}
 async function closeViewer(){stopStudy();renderCards();if(document.fullscreenElement)await document.exitFullscreen().catch(()=>{});$('viewer').hidden=true;$('viewer').classList.remove('presenting');$('present').textContent='Modo aula';$('pause-screen').hidden=true;$('poster').removeAttribute('src');}
 $('close-viewer').onclick=closeViewer;$('previous').onclick=()=>openSlide(selected-1);$('next').onclick=()=>openSlide(selected+1);$('fit').onclick=()=>setFit('fit');$('read').onclick=()=>setFit('read');$('zoom-in').onclick=()=>zoomBy(1.2);$('zoom-out').onclick=()=>zoomBy(1/1.2);
-window.addEventListener('resize',resizePoster);document.addEventListener('fullscreenchange',()=>setTimeout(resizePoster,60));
+window.addEventListener('resize',resizePoster);window.addEventListener('annotation-layout',resizePoster);document.addEventListener('fullscreenchange',()=>setTimeout(resizePoster,60));
 async function fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else if($('viewer').requestFullscreen)await $('viewer').requestFullscreen();else toast('Use o modo de tela cheia do seu navegador.');}catch(e){toast('Use o modo de tela cheia do seu navegador.');}}
 $('fullscreen').onclick=fullscreen;
 function present(){if(me?.role!=='admin')return;const on=$('viewer').classList.toggle('presenting');$('present').textContent=on?'Sair do modo aula':'Modo aula';resizePoster();if(on)toast('Modo aula · B pausa · A exibe os controles · F tela cheia');}
