@@ -11,8 +11,12 @@ id_ed25519*
 id_rsa*
 known_hosts
 
-# Restricted teaching material: inclusion requires separate authorization.
-private/
+# Teaching assets are versioned with the owner's authorization.
+# Keep any unrelated private files out of Git.
+private/*
+!private/catalog.json
+!private/media/
+!private/thumbs/
 
 # Dependencies, local runtime, and backups
 node_modules/

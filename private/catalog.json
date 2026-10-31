@@ -1,0 +1,182 @@
+[
+  {
+    "id": "ficha-11",
+    "file": "ficha-11.jpg",
+    "title": "Partes da embarcação",
+    "group": "Embarcação",
+    "keywords": "proa popa boreste bombordo casco",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-01",
+    "file": "ficha-01.jpg",
+    "title": "Áreas de navegação e habilitações",
+    "group": "Legislação",
+    "keywords": "arrais mestre capitão motonauta",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-02",
+    "file": "ficha-02.jpg",
+    "title": "Áreas de segurança",
+    "group": "Legislação",
+    "keywords": "normam 211 distâncias",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-03",
+    "file": "ficha-03.jpg",
+    "title": "Infrações e penalidades — RLESTA",
+    "group": "Legislação",
+    "keywords": "multas valores suspensão carteira",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-04",
+    "file": "ficha-04.jpg",
+    "title": "Regras de governo e navegação",
+    "group": "Navegação",
+    "keywords": "RIPEAM rumo cruzamento ultrapassagem",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-05",
+    "file": "ficha-05.jpg",
+    "title": "Sinais sonoros — apitos do RIPEAM",
+    "group": "Navegação",
+    "keywords": "manobra advertência nevoeiro",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-06",
+    "file": "ficha-06.jpg",
+    "title": "RIPEAM: luzes e marcas",
+    "group": "Navegação",
+    "keywords": "regras 20 31 sinalização",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-07",
+    "file": "ficha-07.jpg",
+    "title": "RIPEAM: casos complementares",
+    "group": "Navegação",
+    "keywords": "dragagem mergulho reboque sinais",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-08",
+    "file": "ficha-08.jpg",
+    "title": "Balizamento náutico — IALA B",
+    "group": "Navegação",
+    "keywords": "boias cardinal lateral brasil",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-09",
+    "file": "ficha-09.jpg",
+    "title": "Balizamento fluvial",
+    "group": "Navegação",
+    "keywords": "rios hidrovia sinais",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-10",
+    "file": "ficha-10.jpg",
+    "title": "Meteorologia básica",
+    "group": "Navegação",
+    "keywords": "tempo vento nuvens",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-12",
+    "file": "ficha-12.jpg",
+    "title": "Marinharia",
+    "group": "Embarcação",
+    "keywords": "cabos nós voltas",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-13",
+    "file": "ficha-13.jpg",
+    "title": "Fundeio e tipos de âncoras",
+    "group": "Embarcação",
+    "keywords": "ferro amarra ancorar",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-14",
+    "file": "ficha-14.jpg",
+    "title": "Atracar, desatracar e efeitos do leme",
+    "group": "Embarcação",
+    "keywords": "manobras atracação",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-15",
+    "file": "ficha-15.jpg",
+    "title": "Regras para motos aquáticas",
+    "group": "Legislação",
+    "keywords": "normam 212 jet ski motonauta",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-16",
+    "file": "ficha-16.jpg",
+    "title": "Combate a incêndio",
+    "group": "Segurança",
+    "keywords": "fogo extintor normam 211",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-17",
+    "file": "ficha-17.jpg",
+    "title": "Primeiros socorros a bordo",
+    "group": "Segurança",
+    "keywords": "emergência resgate saúde",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-18",
+    "file": "ficha-18.jpg",
+    "title": "Salvatagem",
+    "group": "Segurança",
+    "keywords": "colete boia equipamentos normam 211",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-19",
+    "file": "ficha-19.jpg",
+    "title": "Sobrevivência no mar",
+    "group": "Segurança",
+    "keywords": "abandono naufrágio socorro",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "id": "ficha-estabilidade",
+    "file": "ficha-estabilidade.jpg",
+    "title": "Noções básicas de estabilidade e movimentos da embarcação",
+    "group": "Embarcação",
+    "keywords": "balanço caturro cabeceio peso empuxo superfície livre banda trim",
+    "width": 2160,
+    "height": 3240
+  }
+]
