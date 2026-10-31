@@ -43,6 +43,14 @@ Execute `npm run setup`, escolha uma senha e use `http://localhost:3000` como UR
 
 ## Operação e backup
 
+### Inclusão da ficha Hidrojato em um VPS existente
+
+O catálogo deste repositório contém 21 fichas. Para incluir somente a ficha **Hidrojato e dispositivos acoplados** em uma instalação existente em `/opt/ara-mta`, execute como root o script `deploy/adicionar-ficha-hidrojato.py`, com Python 3. O script baixa o JPEG e sua miniatura de um commit fixo deste repositório, confere seus SHA-256, preserva as demais entradas do catálogo e cria um backup em `/opt/ara-mta-backup-hidrojato-*` antes de aplicar a alteração. Arquivos diferentes com o mesmo nome ou uma entrada divergente são motivo para cancelar, sem sobrescrevê-los.
+
+O serviço `ara-mta` precisa estar ativo. Após a inclusão, o script o reinicia para carregar o catálogo e verifica a resposta da página de login. Isso encerra as sessões em memória; instrutor e alunos precisarão entrar novamente. Em caso de falha de instalação ou de verificação, o catálogo anterior é restaurado e as imagens novas são removidas. O processo não altera cadastros ou registros de estudo.
+
+Na página, procure **Legislação > Hidrojato e dispositivos acoplados**, logo depois de **Regras para motos aquáticas**. O script pode ser executado novamente para a mesma ficha, sem criar uma segunda entrada. Ele não substitui a instalação completa, não altera o servidor web e não aplica outras mudanças de código.
+
 Consulte `sudo systemctl status ara-mta` e `sudo journalctl -u ara-mta`. Faça backups protegidos de `/var/lib/ara-mta` (cadastros e hashes de senha) e `/opt/ara-mta/private` (fichas). Limite o acesso aos backups; eles contêm dados pessoais. Para uma cópia consistente, pare o serviço, copie a pasta de dados e inicie novamente. Preserve as permissões e proprietários ao restaurar. Não exponha backups pelo servidor web. Defina sua rotina de retenção e exclusão de cadastros conforme a necessidade do curso; não há coleta além de nome, usuário, validade e senha protegida.
 
 Para redefinir a senha do instrutor, pare o serviço e execute, na pasta `/opt/ara-mta`:
