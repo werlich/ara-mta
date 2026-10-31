@@ -1,0 +1,24 @@
+import {createInterface} from 'node:readline/promises';
+import {Writable} from 'node:stream';
+import {mkdirSync,writeFileSync,existsSync,chmodSync} from 'node:fs';
+import {resolve,dirname} from 'node:path';
+import {randomUUID} from 'node:crypto';
+import {hashPassword} from '../security.mjs';
+const configPath=resolve(process.env.APP_CONFIG||'data/config.json');
+if(existsSync(configPath)){console.error('Configuração já existe. Para trocar a senha, use scripts/reset-admin.mjs.');process.exit(1);}
+let muted=false;
+const output=new Writable({write(chunk,encoding,cb){if(!muted)process.stdout.write(chunk);cb();}});
+const rl=createInterface({input:process.stdin,output,terminal:!!process.stdin.isTTY});
+const username=(await rl.question('Usuário do instrutor: ')).trim().toLowerCase();
+if(!/^[a-z0-9._-]{3,64}$/.test(username))throw Error('Usuário inválido.');
+process.stdout.write('Senha do instrutor (mínimo 12 caracteres): ');muted=true;const pass=await rl.question('');muted=false;process.stdout.write('\n');
+process.stdout.write('Repita a senha: ');muted=true;const confirm=await rl.question('');muted=false;process.stdout.write('\n');
+if(pass.length<12||pass.length>128||pass!==confirm)throw Error('Senhas diferentes ou tamanho inválido.');
+const origin=(await rl.question('URL pública [https://ara-mta.signau.cc]: ')).trim()||'https://ara-mta.signau.cc';rl.close();
+const parsed=new URL(origin);if(!['https:','http:'].includes(parsed.protocol)||parsed.origin!==origin)throw Error('Use apenas a origem, sem barra final.');
+if(parsed.protocol!=='https:'&&!['localhost','127.0.0.1'].includes(parsed.hostname))throw Error('Em produção, use HTTPS.');
+const dataDir=dirname(configPath);mkdirSync(dataDir,{recursive:true,mode:0o700});
+if(existsSync(resolve(dataDir,'users.json')))throw Error('Banco existente. Operação cancelada.');
+writeFileSync(resolve(dataDir,'users.json'),JSON.stringify({users:[{id:randomUUID(),name:'Claudio Werlich',username,role:'admin',active:true,password:await hashPassword(pass)}]},null,2),{mode:0o600});
+writeFileSync(configPath,JSON.stringify({origin,secureCookies:parsed.protocol==='https:',dataDir,host:'127.0.0.1',port:3000,trustProxy:true},null,2),{mode:0o600});
+console.log('Configuração criada. Guarde uma cópia segura da pasta de dados.');

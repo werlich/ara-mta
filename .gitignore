@@ -1,0 +1,23 @@
+# Runtime data and credentials
+data/
+.env
+.env.*
+!.env.example
+config.json
+users.json
+*.pem
+*.key
+id_ed25519*
+id_rsa*
+known_hosts
+
+# Restricted teaching material: inclusion requires separate authorization.
+private/
+
+# Dependencies, local runtime, and backups
+node_modules/
+node-runtime/
+*.log
+*.bak
+*.tar.gz
+.managed-installer

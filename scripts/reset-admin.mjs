@@ -1,0 +1,11 @@
+import {readFileSync,writeFileSync,renameSync} from 'node:fs';
+import {createInterface} from 'node:readline/promises';
+import {Writable} from 'node:stream';
+import {resolve} from 'node:path';
+import {hashPassword} from '../security.mjs';
+const cfg=JSON.parse(readFileSync(process.env.APP_CONFIG||'data/config.json','utf8'));
+const path=resolve(cfg.dataDir,'users.json'),db=JSON.parse(readFileSync(path,'utf8'));
+process.stdout.write('Nova senha do instrutor (mínimo 12 caracteres): ');
+const silent=new Writable({write(c,e,cb){cb();}});const rl=createInterface({input:process.stdin,output:silent,terminal:!!process.stdin.isTTY});
+const pass=await rl.question('');rl.close();process.stdout.write('\n');if(pass.length<12||pass.length>128)throw Error('Tamanho inválido.');
+db.users.find(x=>x.role==='admin').password=await hashPassword(pass);writeFileSync(path+'.tmp',JSON.stringify(db,null,2),{mode:0o600});renameSync(path+'.tmp',path);console.log('Senha alterada. Reinicie o serviço para encerrar as sessões anteriores.');
